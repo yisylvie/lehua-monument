@@ -58,6 +58,7 @@ function changePhoto(array) {
 
 	newImg.src = "images/" + array[(index + 1) % array.length] + ".jpeg";
 
+	newImg.onload = loadingDone; 
 	// document.querySelector("hidden").classList.remove("hidden").classList.add("show")
 	// newImg.id = "img";
 	// newImg.className = "hidden"
@@ -71,9 +72,12 @@ function changePhoto(array) {
 	// var e = document.createElement('div');
 // e.className = 'box e';
 // document.getElementById('wrapper').appendChild(e);
-	newImg.className = 'show';
-	oldImg.className = "hidden"
+	function loadingDone() {
+		// console.log(newImg.src);
+		newImg.className = 'show';
+		oldImg.className = "hidden"
 
-	index++;
-	setTimeout(function(){changePhoto(array);},5500);
+		index++;
+		setTimeout(function(){changePhoto(array);},5500);
+	}
 }
