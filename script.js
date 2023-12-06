@@ -2,6 +2,7 @@ let currImg = document.getElementById("img");
 let everything = document.getElementById("everything");
 let index = 1;
 let playButton = document.querySelector("svg");
+
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
@@ -21,18 +22,22 @@ function shuffle(array) {
     return array;
 }
 
-// Used like so
 var images = new Array(26);
 for (let i = 0; i < images.length; i++) {
 	images[i] = (i + 1) + "img";
 }
 shuffle(images);
 
+var songs = ['hawaii 78.mp3', 'hawaii 78 introduction.mp3'];
+
+shuffle(images);
+shuffle(songs);
+
 // setInterval(changePhoto(arr),1000);
 
 playButton.addEventListener("click", function(e) {
 	playButton.style.display = "none";
-	var audio = new Audio('hawaii 78.mp3');
+	var audio = new Audio([songs[0]]);
 	audio.play();
 	audio.loop = true;
 	changePhoto(images);
@@ -40,7 +45,7 @@ playButton.addEventListener("click", function(e) {
 
 playButton.addEventListener("keypress", function(e) {
 	playButton.style.display = "none";
-	var audio = new Audio('hawaii 78.mp3');
+	var audio = new Audio([songs[0]]);
 	audio.play();
 	audio.loop = true;
 	changePhoto(images);
@@ -57,8 +62,8 @@ function changePhoto(array) {
 	// newImg.id = "img";
 	// newImg.className = "hidden"
 
-	window.getComputedStyle(newImg).opacity; // added
-	window.getComputedStyle(oldImg).opacity; // added
+	// window.getComputedStyle(newImg).opacity; // added
+	// window.getComputedStyle(oldImg).opacity; // added
 
 	// document.getElementById("img").remove()
 	// bro = array[array.length-1 % index];
