@@ -70,5 +70,5 @@ function changePhoto(array) {
 	oldImg.className = "hidden"
 
 	index++;
-	setTimeout(function(){changePhoto(array);},5000);
+	setTimeout(function(){changePhoto(array);},5500);
 }
