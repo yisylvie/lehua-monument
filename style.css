@@ -1,5 +1,5 @@
 :root{
-    font-size: 16px;
+    font-size: 8vw;
 }
 
 body {
@@ -8,7 +8,11 @@ body {
     line-height: 1.2em;
     margin: 0;
     padding: 0;
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* height: 100vh; */
+    background-color: black;
+    -webkit-text-stroke: .01em rgba(0, 0, 0, 0.678); /* width and color */
 }
 
 h1, h2, h3, h4, h5, p, ol, ul, li, a, button, small {
@@ -32,6 +36,24 @@ img{
     /* transition:opacity 0.5s linear; */
 }
 
+#uaMau{
+    position: absolute;
+    /* font-size: ; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    cursor: pointer;
+}
+
+#uaMau svg {
+    width: 17%;
+    height: 17%;
+    display: block;
+    margin: auto;
+    margin-top: .5em;
+}
+
 .show{
     /* transition: opacity 3s cubic-bezier(0.55, 0.06, 0.68, 0.19); */
     opacity:1;
@@ -41,9 +63,13 @@ img{
     opacity:0;   
 }
 
-svg{
+.off {
+    display: none;
+}
+
+#play{
     position: absolute;
-    color: white;
+    /* color: white; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
